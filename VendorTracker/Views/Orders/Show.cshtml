@@ -1,14 +1,16 @@
-@{
-  Layout = "_Layout";
-}
+<link rel="stylesheet" type="text/css" href="~/css/styles.css" />
 
-<h1>Vendor Order Details:</h1>
+<body>
 
-<h2>Vendor: @Model["vendor"].Name</h2>
-<h3>Title: @Model["order"].Title</h3>
-<h4>Description: @Model["order"].Description</h4>
-<h4>Total Price: @Model["order"].Price</h4>
-<h4>Date Ordered: @Model["order"].Date</h4>
+  <h1>Vendor Order Details:</h1>
 
-<a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new Order!</a>
-<a href="/vendors">Back list of Vendors</a>
+  <h2>Vendor: @Model["vendor"].Name</h2>
+  <h3>Title: @Model["order"].Title</h3>
+  <h4>Description: @Model["order"].Description</h4>
+  <h4>Total Price: $@Model["order"].Price</h4>
+  <h4>Date Ordered: @Model["order"].Date</h4>
+
+  <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new Order!</a></p>
+  <p><a href='/vendors/@Model["vendor"].Id'>Back to list of orders for this Vendor</a></p>
+  <p><a href="/vendors">Back to list of Vendors</a></p>
+</body>
