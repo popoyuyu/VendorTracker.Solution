@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace VendorTracker.Controllers
 {
-  public class OrdersController : Controllers
+  public class OrdersController : Controller
   {
 
     [HttpGet("/vendors/{vendorId}/orders/new")]
-    public Action New(int vendorId)
+    public ActionResult New(int vendorId)
     {
       Vendor vendor = Vendor.Find(vendorId);
       return View(vendor);
@@ -28,7 +28,7 @@ namespace VendorTracker.Controllers
       Vendor vendor = Vendor.Find(vendorId);
       Dictionary<string, object> model = new Dictionary<string, object>();
       model.Add("order", order);
-      model.Add("vender", vendor);
+      model.Add("vendor", vendor);
       return View(model);
     }
   }
