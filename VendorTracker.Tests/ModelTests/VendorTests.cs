@@ -74,7 +74,7 @@ namespace VendorTracker.Tests
       List<Order> newList = new List<Order> { newOrder };
       string name = "Test Vendor";
       string description1 = "Test Description";
-      Vendor newVendor = new Vendor(name, description);
+      Vendor newVendor = new Vendor(name, description1);
       newVendor.AddOrder(newOrder);
       List<Order> result = newVendor.Orders;
       CollectionAssert.AreEqual(newList, result);
