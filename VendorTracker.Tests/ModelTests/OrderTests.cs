@@ -32,5 +32,12 @@ namespace VendorTracker.Tests
       Assert.AreEqual(price, newOrder.Price);
       Assert.AreEqual(date, newOrder.Date);
     }
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Order> newList = new List<Order> { };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
